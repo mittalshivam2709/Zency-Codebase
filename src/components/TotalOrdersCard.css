@@ -1,0 +1,81 @@
+.total-orders-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  width: 300px;
+  height: 150px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  margin-left: 10px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-icon {
+  width: 24px;
+  height: 24px;
+  fill: #7c4dff;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.menu-icon {
+  font-size: 20px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.card-body {
+  margin-top: 10px;
+}
+
+.order-count {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.order-stats {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+.growth {
+  display: flex;
+  align-items: center;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.growth-icon {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.comparison {
+  margin-left: 10px;
+  color: #888;
+}
+
+.chart-placeholder {
+  margin-top: 10px;
+}
+
+.chart-line {
+  display: block;
+}

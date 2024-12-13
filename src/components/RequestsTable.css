@@ -1,0 +1,83 @@
+body{
+    background-color: #FFFFFF;
+    margin-bottom: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+th{
+    background-color: #FFFFFF;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    width: 12%;
+    height: 50px;
+}
+
+td{
+    height: 50px;
+}
+
+.completetable{
+    width: 100%;
+    /* border-collapse: collapse;
+    margin-top: 20px; */
+}
+tr{
+    /* border-bottom: 1px solid #f2f2f2; */
+    width: 100%;
+}
+
+h4{
+    display: inline-block;
+    margin-right: 100%;
+    width: 150px;
+}
+
+/* button{
+    width: 100%;
+    display: inline-block;
+} */
+
+.viewallbtn {
+    margin-left: 95%;
+    margin-right: 0%;
+}
+
+.actionbtn{
+    width: 30%;
+}
+
+.actionheader{
+    width: 16%;
+}
+
+.acceptbtn{
+    background-color: #FFFFFF;
+    color: green;
+    border: 0cm;
+    margin-right: 12%;
+    margin-left: 12%;
+}
+
+.declinebtn{
+    background-color: #FFFFFF;
+    color: red;
+    border: 0cm ;
+    margin-right: 12%;
+    margin-left: 12%;
+}
+
+.Quantityvalue{
+    background-color: #EFF8FF;
+    color: #175CD3;
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+.tablebody{
+    background-color: #FFFFFF;
+}

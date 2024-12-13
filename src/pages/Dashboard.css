@@ -1,0 +1,10 @@
+body{
+    background-color: #F5F8FF;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+.lol {
+    /* display: inline-block; */
+    display: flex;
+}
