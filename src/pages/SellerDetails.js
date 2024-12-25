@@ -1,49 +1,81 @@
 import React from 'react'
-import './SellerDetails.css'
+import './SellerDetails.css' // Ensure this CSS file exists for stydivng
+import icon from '../images/icon.png'
 
-function SellerDetails() {
+const SellerDetails = () => {
   return (
     <div className="seller-container">
-      {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="logo">
-          <div className="icon"></div>
-          <h1 className="logo-text">Zency Hub: Fast, Simple, Profitable</h1>
+      <div className="sidebar">
+        <div className="icon_and_heading">
+          <img src={icon} alt="" />
+          <h2>Zency Hub: Fast, Simple, Profitable</h2>
         </div>
-        <div className="steps">
-          <div className="step active">Seller Details</div>
-          <div className="step">Brand Details</div>
-          <div className="step">Bank Details</div>
-          <div className="step">Shipping Location</div>
-          <div className="step">Digital Signature</div>
-          <div className="step">Verify And Submit</div>
+        <div className="progress-container">
+          <ul className="steps">
+            <li className="active">
+              <span className="circle"></span>
+              {/* <div className='circle'></div> */}
+              Seller Details
+            </li>
+            <li>
+              <span className="circle"></span>
+              Brand Details
+            </li>
+            <li>
+              <span className="circle"></span>
+              Bank Details
+            </li>
+            <li>
+              <span className="circle"></span>
+              Shipping Location
+            </li>
+            <li>
+              <span className="circle"></span>
+              Digital Signature
+            </li>
+            <li>
+              <span className="circle"></span>
+              Verify And Submit
+            </li>
+          </ul>
+          <div className="line"></div>
         </div>
-      </aside>
+      </div>
+      {/* 
+      <div class="main-content">
+        <h1>Seller Details</h1>
+        <p>Enter GST No Of Your Business</p>
+        <div className='inputarea'>
+          <label for="gst-details" className='gstheader'>GST Details</label>
+          <textarea id="gst-details" rows="4" placeholder="Info"></textarea>
+        </div>
+        <div class="button-group">
+          <button class="back-button">BACK</button>
+          <button class="save-button">SAVE</button>
+        </div>
+      </div> */}
 
-      {/* Content */}
-      <main className="main-content">
-        <h2 className="content-title">Seller Details</h2>
-        <p className="content-subtitle">Enter GST No Of Your Business</p>
-        <form className="form">
-          <label htmlFor="gst" className="label">
+      <div className="container">
+        <h1 className="title">Seller Details</h1>
+        <p className="subtitle">Enter GST No Of Your Business</p>
+        <hr className="divider" />
+
+        <div className="form-group">
+          <label htmlFor="gstDetails" className="label">
             GST Details
           </label>
-          <input
-            type="text"
-            id="gst"
-            placeholder="Enter GST Number"
-            className="input-field"
-          />
-          <div className="form-buttons">
-            <button type="button" className="back-btn">
-              BACK
-            </button>
-            <button type="submit" className="save-btn">
-              SAVE
-            </button>
-          </div>
-        </form>
-      </main>
+          <textarea
+            id="gstDetails"
+            placeholder="Info"
+            className="textarea"
+          ></textarea>
+        </div>
+
+        <div className="button-group">
+          <button className="back-button">BACK</button>
+          <button className="save-button">SAVE</button>
+        </div>
+      </div>
     </div>
   )
 }

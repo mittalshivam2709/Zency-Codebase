@@ -1,142 +1,165 @@
-/* General Reset */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: "Arial", sans-serif;
-  color: #333;
-  background-color: #f5f8fc;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Container */
+.icon_and_heading{
+  display: flex;
+  align-items: center; /* Vertically aligns items */
+  justify-content: space-between; /* Distributes items horizontally */
+}
+
 .seller-container {
   display: flex;
   height: 100vh;
-  overflow: hidden;
 }
 
-/* Sidebar */
 .sidebar {
-  background-color: #e8f0ff;
-  width: 25%;
+  background-color: #EBF3FA;
   padding: 20px;
+  width: 25%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-
-.icon {
-  height: 40px;
-  width: 40px;
-  background-color: #7a56f1;
-  border-radius: 50%;
-}
-
-.logo-text {
-  font-size: 16px;
+.sidebar h2 {
   font-weight: bold;
-  color: #7a56f1;
+  color: #6e60f9;
+  display: inline-block;
+}
+
+.progress-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-left: 100px;
+  align-items: center;
 }
 
 .steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Make the list fit the full width of the sidebar */
+  height: 100%;
+}
+
+
+.steps li {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.step {
-  font-size: 14px;
-  color: #555;
-  position: relative;
-  padding-left: 20px;
-  cursor: pointer;
-}
-
-.step::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 10px;
-  width: 10px;
-  border: 2px solid #7a56f1;
-  border-radius: 50%;
-  background-color: transparent;
-}
-
-.step.active {
-  font-weight: bold;
-  color: #7a56f1;
-}
-
-.step.active::before {
-  background-color: #7a56f1;
-}
-
-/* Main Content */
-.main-content {
-  flex: 1;
-  padding: 40px 60px;
-}
-
-.content-title {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.content-subtitle {
+  align-items: center;
+  margin: 20px 0;
   font-size: 16px;
-  color: #888;
-  margin-bottom: 30px;
+  margin-top: 20%;
+  font-size: x-large;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.steps li.active {
+  color: #6e60f9;
+  font-weight: bold;
+}
+
+.steps li .circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.steps li.active .circle {
+  background-color: #6e60f9;
+}
+
+.line {
+  position: absolute;
+  top: 110px;
+  left: 7px; /* Align with the circles */
+  width: 2px;
+  height: 64%;
+  background-color: #ccc;
+  z-index: 0;
+  margin-left: 16%;
+}
+
+.steps li.active ~ li .circle {
+  background-color: #ccc;
+}
+
+.container {
+  padding: 40px;
+  font-family: 'Arial', sans-serif;
+  text-align: left;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.divider {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 40px;
 }
 
 .label {
-  font-size: 14px;
-  color: #555;
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
 }
 
-.input-field {
+.textarea {
+  width: 1400px;
+  height: 150px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   font-size: 14px;
 }
 
-.form-buttons {
+.button-group {
   display: flex;
-  justify-content: flex-start;
-  gap: 20px;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-.back-btn {
+.back-button {
+  background-color: #fff;
+  color: #6e6e6e;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   padding: 10px 20px;
-  background-color: #f5f5f5;
-  border: none;
-  border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
-  color: #555;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.save-btn {
-  padding: 10px 20px;
-  background-color: #7a56f1;
+.save-button {
+  background-color: #6e60f9;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 10px 20px;
   font-size: 14px;
   cursor: pointer;
-  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
