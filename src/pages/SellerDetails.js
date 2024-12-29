@@ -2,6 +2,7 @@ import React from 'react'
 import './SellerDetails.css' // Ensure this CSS file exists for stydivng
 import icon from '../images/icon.png'
 import { useState } from 'react'
+import uploadimg from '../images/uploadimg.png'
 
 const SellerDetails = () => {
   const [getGSTdetails, setgetGstDetails] = useState(true)
@@ -33,6 +34,14 @@ const SellerDetails = () => {
   const verifyGST = () => {
     setshowGSTinformation(false)
     settakeSellerDetails(true)
+  }
+  const [inputType, setInputType] = useState('')
+
+  const handleCINChange = (e) => {
+    const { name, value } = e.target
+    setInputType(
+      name === 'cin' && value ? 'cin' : name === 'udyam' && value ? 'udyam' : ''
+    )
   }
 
   const [gstDetails, setGstDetails] = useState({
@@ -196,8 +205,27 @@ const SellerDetails = () => {
                 placeholder="Mobile Number"
                 required
               />
-              <label className="label">Upload GST Certificate</label>
-              <input type="file" className="textarea" required />
+              <label className="label">Upload GST document</label>
+
+              <div className="uploadimagecontainer">
+                <label htmlFor="file-upload" className="uploadimage">
+                  <span role="img" aria-label="upload">
+                    <img src={uploadimg} alt="" />
+                  </span>
+                  &nbsp; Upload the file
+                </label>
+                <input
+                  id="file-upload"
+                  type="file"
+                  accept=".pdf,.png,.jpg"
+                  style={{ display: 'none' }}
+                />
+                <span style={{ color: '#999', fontSize: '12px' }}>
+                  Maximum File Size: 5mb
+                  <br />
+                  Supported Formats: Pdf, Png, Jpg
+                </span>
+              </div>
               <label className="label">Enter PAN Number</label>
               <input
                 type="text"
@@ -206,8 +234,109 @@ const SellerDetails = () => {
                 required
               />
               <label className="label">Upload PAN Document</label>
-              <input type="file" className="textarea" required />
-              <p>Enter CIN (21 digit) or UDYAM number (19 digits)</p>
+
+              <div className="uploadimagecontainer">
+                <label htmlFor="file-upload" className="uploadimage">
+                  <span role="img" aria-label="upload">
+                    <img src={uploadimg} alt="" />
+                  </span>
+                  &nbsp; Upload the file
+                </label>
+                <input
+                  id="file-upload"
+                  type="file"
+                  accept=".pdf,.png,.jpg"
+                  style={{ display: 'none' }}
+                />
+                <span style={{ color: '#999', fontSize: '12px' }}>
+                  Maximum File Size: 5mb
+                  <br />
+                  Supported Formats: Pdf, Png, Jpg
+                </span>
+              </div>
+              <div>
+                <h3>Select CIN (21 digit) OR UDYAM number (19 digit) *</h3>
+                <div>
+                  <input
+                    type="text"
+                    name="cin"
+                    placeholder="Enter CIN"
+                    onChange={handleCINChange}
+                  />
+                  <input
+                    type="radio"
+                    name="selection"
+                    value="cin"
+                    checked={inputType === 'cin'}
+                    readOnly
+                  />
+                  <input
+                    type="text"
+                    name="udyam"
+                    placeholder="Enter UDYAM number"
+                    onChange={handleCINChange}
+                  />
+                  <input
+                    type="radio"
+                    name="selection"
+                    value="udyam"
+                    checked={inputType === 'udyam'}
+                    readOnly
+                  />
+                </div>
+
+                {inputType === 'cin' && (
+                  <div>
+                    <h4>Upload CIN Document *</h4>
+
+                    <div className="uploadimagecontainer">
+                      <label htmlFor="file-upload" className="uploadimage">
+                        <span role="img" aria-label="upload">
+                          <img src={uploadimg} alt="" />
+                        </span>
+                        &nbsp; Upload the file
+                      </label>
+                      <input
+                        id="file-upload"
+                        type="file"
+                        accept=".pdf,.png,.jpg"
+                        style={{ display: 'none' }}
+                      />
+                      <span style={{ color: '#999', fontSize: '12px' }}>
+                        Maximum File Size: 5mb
+                        <br />
+                        Supported Formats: Pdf, Png, Jpg
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {inputType === 'udyam' && (
+                  <div>
+                    <h4>Upload UDYAM Document *</h4>
+
+                    <div className="uploadimagecontainer">
+                      <label htmlFor="file-upload" className="uploadimage">
+                        <span role="img" aria-label="upload">
+                          <img src={uploadimg} alt="" />
+                        </span>
+                        &nbsp; Upload the file
+                      </label>
+                      <input
+                        id="file-upload"
+                        type="file"
+                        accept=".pdf,.png,.jpg"
+                        style={{ display: 'none' }}
+                      />
+                      <span style={{ color: '#999', fontSize: '12px' }}>
+                        Maximum File Size: 5mb
+                        <br />
+                        Supported Formats: Pdf, Png, Jpg
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </div>
             </form>
             <button className="save-button">Save & Continue</button>
           </div>

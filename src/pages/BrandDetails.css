@@ -5,7 +5,7 @@ body {
   box-sizing: border-box;
 }
 
-.icon_and_heading{
+.icon_and_heading {
   display: flex;
   align-items: center; /* Vertically aligns items */
   justify-content: space-between; /* Distributes items horizontally */
@@ -17,7 +17,7 @@ body {
 }
 
 .sidebar {
-  background-color: #EBF3FA;
+  background-color: #ebf3fa;
   padding: 20px;
   width: 25%;
   display: flex;
@@ -47,7 +47,6 @@ body {
   width: 100%; /* Make the list fit the full width of the sidebar */
   height: 100%;
 }
-
 
 .steps li {
   display: flex;
@@ -94,7 +93,6 @@ body {
 
 .container {
   padding: 40px;
-  width: 100%;
   font-family: 'Arial', sans-serif;
   text-align: left;
   overflow-y: auto;
@@ -164,93 +162,6 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* margin-top: 90%; */
   margin-left: 20px;
-}
-
-
-/* Overlay for the OTP popup */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.popup {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  width: 350px;
-}
-
-.otp-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.otp-input {
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  font-size: 18px;
-  margin: 0 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.resend-text {
-  color: #888;
-  margin: 10px 0;
-  font-size: 14px;
-}
-
-
-.gst-info-box {
-  height: 40%;
-  background-color: #e8ebff;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 20px 0;
-  color: #000;
-  font-size: 14px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.gst-info-box p {
-  margin: 5px 0;
-  height: 20%;
-  font-size: 20px;
-}
-
-.footer-text {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 20px;
-  padding-left: 5px;
-}
-
-.verify-button {
-  background-color: #6e60f9;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  height: 50px;
-}
-
-.seller-details-container h1 {
-  font-size: xx-large;
 }
 
 

@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
 import SellerDetails from './pages/SellerDetails';
+import BrandDetails from './pages/BrandDetails';
+import BankDetails from './pages/BankDetails'
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<LoginPage />} /> */}
           {/* <Route path="/" element={<Dashboard />} /> */}
-          <Route path="/" element={<SellerDetails />} />
+          {/* <Route path="/" element={<SellerDetails />} /> */}
+          {/* <Route path="/" element={<BrandDetails />} /> */}
+          <Route path="/" element={<BankDetails />} />
           {/* <Route path="/signup" element={<Signup />} /> */}
         </Routes>
       </Router>
