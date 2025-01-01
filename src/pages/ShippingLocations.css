@@ -5,7 +5,7 @@ body {
   box-sizing: border-box;
 }
 
-.icon_and_heading {
+.icon_and_heading{
   display: flex;
   align-items: center; /* Vertically aligns items */
   justify-content: space-between; /* Distributes items horizontally */
@@ -17,7 +17,7 @@ body {
 }
 
 .sidebar {
-  background-color: #ebf3fa;
+  background-color: #EBF3FA;
   padding: 20px;
   width: 25%;
   display: flex;
@@ -47,6 +47,7 @@ body {
   width: 100%; /* Make the list fit the full width of the sidebar */
   height: 100%;
 }
+
 
 .steps li {
   display: flex;
@@ -86,13 +87,13 @@ body {
   z-index: 0;
   margin-left: 16%;
 }
-
 .steps li.active ~ li .circle {
   background-color: #ccc;
 }
 
 .container {
   padding: 40px;
+  width: 100%;
   font-family: 'Arial', sans-serif;
   text-align: left;
   overflow-y: auto;
@@ -132,6 +133,7 @@ body {
   border: 1px solid #ddd;
   padding: 10px;
   font-size: 14px;
+  background-color: white;
 }
 
 .button-group {
@@ -181,3 +183,49 @@ body {
   color: #6666FF;
   font-weight: 500;
 }
+
+.location-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 625px;
+}
+
+.gst-details {
+  padding: 15px;
+  border: 1px solid black;
+  width: 625px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.gst-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.gst-value {
+  margin-bottom: 15px;
+}
+
+.info-text {
+  font-size: 14px;
+  color: #7d7d7d;
+  margin: 10px 0;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fssai-section {
+  display: flex;
+  gap: 10px;
+}
+
+.fssai-section input{
+  width: 550px;
+}
+

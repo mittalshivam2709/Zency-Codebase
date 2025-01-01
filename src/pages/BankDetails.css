@@ -75,13 +75,12 @@ body {
 .steps li.active .circle {
   background-color: #6e60f9;
 }
-
 .line {
   position: absolute;
-  top: 100px;
-  left: 17px; /* Align with the circles */
+  top: 120px;
+  left: 10px; /* Align with the circles */
   width: 2px;
-  height: 68%;
+  height: 73%;
   background-color: #ccc;
   z-index: 0;
   margin-left: 16%;
