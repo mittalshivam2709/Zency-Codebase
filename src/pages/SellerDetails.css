@@ -5,18 +5,20 @@ body {
   box-sizing: border-box;
 }
 
-.icon_and_heading{
+/* .icon_and_heading{
   display: flex;
-  align-items: center; /* Vertically aligns items */
-  justify-content: space-between; /* Distributes items horizontally */
-}
+  align-items: center; */
+   /* Vertically aligns items */
+  /* justify-content: space-between; */
+   /* Distributes items horizontally */
+/* } */
 
-.seller-container {
+/* .seller-container {
   display: flex;
   height: 100vh;
-}
+} */
 
-.sidebar {
+/* .sidebar {
   background-color: #EBF3FA;
   padding: 20px;
   width: 25%;
@@ -24,46 +26,47 @@ body {
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-}
+} */
 
-.sidebar h2 {
+/* .sidebar h2 {
   font-weight: bold;
   color: #6e60f9;
   display: inline-block;
-}
+} */
 
-.progress-container {
+/* .progress-container {
   position: relative;
   width: 100%;
   height: 100%;
   padding-left: 70px;
   align-items: center;
-}
+} */
 
-.steps {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%; /* Make the list fit the full width of the sidebar */
-  height: 100%;
-}
+/* .steps { */
+  /* list-style: none; */
+  /* padding: 0; */
+  /* margin: 0; */
+  /* width: 100%; */
+   /* Make the list fit the full width of the sidebar */
+  /* height: 100%; */
+/* } */
 
 
-.steps li {
+/* .steps li {
   display: flex;
   align-items: center;
   margin: 5px 0;
   font-size: 16px;
   margin-top: 30%;
   font-size: x-large;
-}
+} */
 
-.steps li.active {
+/* .steps li.active {
   color: #6e60f9;
   font-weight: bold;
-}
+} */
 
-.steps li .circle {
+/* .steps li .circle {
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -71,72 +74,76 @@ body {
   margin-right: 10px;
   position: relative;
   z-index: 1;
-}
+} */
 
-.steps li.active .circle {
+/* .steps li.active .circle {
   background-color: #6e60f9;
-}
-.line {
+} */
+/* .line {
   position: absolute;
-  top: 120px;
-  left: 10px; /* Align with the circles */
-  width: 2px;
+  top: 10%;
+  left: 1%; */
+   /* Align with the circles */
+  /* width: 1rem;
   height: 73%;
   background-color: #ccc;
   z-index: 0;
   margin-left: 16%;
-}
+} */
+
 .steps li.active ~ li .circle {
   background-color: #ccc;
 }
 
-.container {
+/* .container {
   padding: 40px;
   width: 100%;
   font-family: 'Arial', sans-serif;
   text-align: left;
   overflow-y: auto;
-}
+} */
 
-.title {
+/* .title {
   font-size: 50px;
   font-weight: bold;
   margin-bottom: 5px;
-}
+} */
 
-.subtitle {
+/* .subtitle {
   font-size: 25px;
   margin-bottom: 20px;
-}
+} */
 
-.divider {
+/* .divider {
   border: none;
   border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
-}
+} */
 
-.form-group {
+/* .form-group {
   margin-bottom: 40px;
-}
+} */
 
-.label {
+/* .label {
   display: block;
   font-size: 30px;
   margin-bottom: 10px;
   color: black;
-}
+} */
 
-.textarea {
-  width: 623px;
+/* .textarea {
+  width: 60vw;
   border-radius: 8px;
   border: 1px solid #ddd;
   padding: 10px;
   font-size: 14px;
-}
+} */
 
 .button-group {
   display: flex;
   margin-top: 20px;
+  position: fixed;
+  bottom: 4vh ;
 }
 
 .back-button {
