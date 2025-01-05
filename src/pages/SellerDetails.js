@@ -24,6 +24,10 @@ const SellerDetails = () => {
     }
   }
 
+  const handleselectchange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
   const handleOTPsubmit = () => {
     setcomponentflag('showGSTinfo')
     setOtp(['', '', '', '']) // Clear OTP fields
@@ -56,6 +60,7 @@ const SellerDetails = () => {
   }
 
   const submitSellerDetails = () => {
+    console.log('ih')
     setpageflag('BrandDetails')
   }
 
@@ -484,123 +489,10 @@ const SellerDetails = () => {
         </div>
       )}
 
-      {/* {pageflag == 'BrandDetails' && (
-        <div className="seller-container">
-          <div className="container">
-            <h1 className="title">Brand Details</h1>
-            <hr className="divider" />
-
-            <form className="form-group" onSubmit={handleBrandDetails}>
-              <input
-                type="text"
-                id="gstDetails"
-                className="textarea"
-                placeholder="Enter Brand Details*"
-                required
-              />
-              <br />
-              <br />
-              <input
-                type="text"
-                id="gstDetails"
-                className="textarea"
-                placeholder="Enter Manufacture Name*"
-                required
-              />
-              <label htmlFor="gstDetails" className="label">
-                Brand trademark number*
-              </label>
-
-              <input
-                type="text"
-                id="gstDetails"
-                className="textarea"
-                placeholder="Enter Trademeark Registration Number*"
-                required
-              />
-              <br />
-              <br />
-              <div className="uploadimagecontainer">
-                <label htmlFor="file-upload" className="uploadimage">
-                  <span role="img" aria-label="upload">
-                    <img src={uploadimg} alt="" />
-                  </span>
-                  &nbsp; Upload the file
-                </label>
-                <input
-                  id="file-upload"
-                  type="file"
-                  accept=".pdf,.png,.jpg"
-                  style={{ display: 'none' }}
-                />
-                <span style={{ color: '#999', fontSize: '12px' }}>
-                  Maximum File Size: 5mb
-                  <br />
-                  Supported Formats: Pdf, Png, Jpg
-                </span>
-              </div>
-
-              <label htmlFor="gstDetails" className="label">
-                Seller Authorization Document*
-              </label>
-
-              <div className="uploadimagecontainer">
-                <label htmlFor="file-upload" className="uploadimage">
-                  <span role="img" aria-label="upload">
-                    <img src={uploadimg} alt="" />
-                  </span>
-                  &nbsp; Upload the file
-                </label>
-                <input
-                  id="file-upload"
-                  type="file"
-                  accept=".pdf,.png,.jpg"
-                  style={{ display: 'none' }}
-                />
-                <span style={{ color: '#999', fontSize: '12px' }}>
-                  Maximum File Size: 5mb
-                  <br />
-                  Supported Formats: Pdf, Png, Jpg
-                </span>
-              </div>
-
-              <br />
-
-              <div className="uploadimagecontainer">
-                <label htmlFor="file-upload" className="uploadimage">
-                  <span role="img" aria-label="upload">
-                    <img src={uploadimg} alt="" />
-                  </span>
-                  &nbsp; Upload the file
-                </label>
-                <input
-                  id="file-upload"
-                  type="file"
-                  accept=".pdf,.png,.jpg"
-                  style={{ display: 'none' }}
-                />
-                <span style={{ color: '#999', fontSize: '12px' }}>
-                  Maximum File Size: 5mb
-                  <br />
-                  Supported Formats: Pdf, Png, Jpg
-                </span>
-              </div>
-
-              <div className="button-group">
-                <button className="back-button">BACK</button>
-                <button className="save-button" type="submit">
-                  SAVE & CONTINUE
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )} */}
-
       {pageflag === 'BrandDetails' && (
         <div className="h-screen">
-          <div className="flex p-10 overflow-y-auto">
-            <h1 className="text-5xl font-bold mb-5">Brand Details</h1>
+          <div className="flex-col flex-grow p-10 overflow-y-auto">
+            <h1 className="text-5xl font-bold mb-5 text-left mt-10">Brand Details</h1>
             <hr className="border-b border-gray-300 mb-8" />
 
             <form className="space-y-6" onSubmit={handleBrandDetails}>
@@ -620,7 +512,7 @@ const SellerDetails = () => {
               />
               <label
                 htmlFor="trademarkNumber"
-                className="block text-lg font-medium text-black"
+                className="block text-lg font-medium text-black text-left"
               >
                 Brand trademark number*
               </label>
@@ -655,7 +547,7 @@ const SellerDetails = () => {
 
               <label
                 htmlFor="sellerAuthorization"
-                className="block text-lg font-medium text-black"
+                className="block text-lg font-medium text-black text-left"
               >
                 Seller Authorization Document*
               </label>
@@ -719,124 +611,10 @@ const SellerDetails = () => {
           </div>
         </div>
       )}
-      {/* {pageflag === 'BankDetails' && (
-        <div className="container">
-          <h1 className="title">Bank Details</h1>
-          <hr className="divider" />
-          <label htmlFor="gstDetails" className="label">
-            GST Number
-          </label>
-          <input
-            type="text"
-            id="gstDetails"
-            className="textarea"
-            value={formData.gstNumber}
-            readOnly
-          />
-          <label htmlFor="gstDetails" className="label">
-            Legal Name
-          </label>
-          <input
-            type="text"
-            id="gstDetails"
-            className="textarea"
-            value={formData.legalName}
-            readOnly
-          />
-          <br />
-          <br />
-          <form className="form-group" onSubmit={handleBankDetails}>
-            <input
-              type="text"
-              id="gstDetails"
-              className="textarea"
-              placeholder="Enter Brand Details*"
-              required
-            />
-            <br />
-            <br />
-            <input
-              type="text"
-              id="gstDetails"
-              className="textarea"
-              placeholder="Bank Account Number*"
-              required
-            />
-            <br />
-            <br />
-            <input
-              type="text"
-              id="gstDetails"
-              className="textarea"
-              placeholder="Re-enter Bank Account Number*"
-              required
-            />
-            <br />
-            <br />
-            <input
-              type="text"
-              id="gstDetails"
-              className="textarea"
-              placeholder="IFSC Code*"
-              required
-            />
-            <br />
-            <br />
-            <label>Bank Type *</label>
-            <br /> <br />
-            <select
-              name="bankType"
-              value={formData.bankType}
-              style={{ backgroundColor: 'white' }}
-              className="textarea"
-              // onChange={handleInputChange}
-              // required
-            >
-              <option value="">Bank Type</option>
-              <option value="Savings">Savings</option>
-              <option value="Current">Current</option>
-            </select>
-            <label htmlFor="gstdetails" className="label">
-              {' '}
-              Upload Cancelled Cheque
-            </label>
-            <div className="uploadimagecontainer">
-              <label htmlFor="file-upload" className="uploadimage">
-                <span role="img" aria-label="upload">
-                  <img src={uploadimg} alt="" />
-                </span>
-                &nbsp; Upload the file
-              </label>
-              <input
-                id="file-upload"
-                type="file"
-                accept=".pdf,.png,.jpg"
-                style={{ display: 'none' }}
-              />
-              <span style={{ color: '#999', fontSize: '12px' }}>
-                Maximum File Size: 5mb
-                <br />
-                Supported Formats: Pdf, Png, Jpg
-              </span>
-            </div>
-            <br />
-            <span style={{ color: '#999', fontSize: '12px' }}>
-              A small amount will be Credited in Your Bank Account to verify
-              your Bank Account Details.
-            </span>
-            <div className="button-group">
-              <button className="back-button">BACK</button>
-              <button className="save-button" type="submit">
-                SAVE & CONTINUE
-              </button>
-            </div>
-          </form>
-        </div>
-      )} */}
 
       {pageflag === 'BankDetails' && (
         <div className="container p-10 text-left overflow-y-auto font-sans">
-          <h1 className="text-5xl font-bold mb-2">Bank Details</h1>
+          <h1 className="text-5xl font-bold mb-2 text-left mt-10">Bank Details</h1>
           <hr className="border-b border-gray-300 mb-5" />
           <label
             htmlFor="gstDetails"
@@ -897,6 +675,7 @@ const SellerDetails = () => {
             <select
               name="bankType"
               value={formData.bankType}
+              onChange={handleselectchange}
               className="w-full bg-white rounded-lg border border-gray-300 p-3"
               required
             >
@@ -954,116 +733,42 @@ const SellerDetails = () => {
         </div>
       )}
 
-      {/* {pageflag === 'ShippingLocation' && (
-        <div className="container">
-          <h1 className="title">Shipping Locations</h1>
-          <hr className="divider" />
-          <form className="form-group" onSubmit={handleShippingLocations}>
-            <div className="location-selector">
-              <select className="textarea">
-                <option>CCGYT76456678FGTVV</option>
-              </select>
-              <input type="text" placeholder="Hyderabad" className="textarea" />
-            </div>
-            <div className="gst-details">
-              <p className="gst-label">GST number</p>
-              <p className="gst-value">CCGYT76456678FGTVV</p>
-              <br />
-              <select className="dropdown" className="textarea">
-                <option>Select Address</option>
-              </select>
-              <p className="info-text" style={{ color: '#CC99FF' }}>
-                These Addresses Are Fetched From Your GST Information
-              </p>
-              <br />
-              <div className="uploadimagecontainer">
-                <label htmlFor="file-upload" className="uploadimage">
-                  <span role="img" aria-label="upload">
-                    <img src={uploadimg} alt="" />
-                  </span>
-                  &nbsp; Upload the file
-                </label>
-                <input
-                  id="file-upload"
-                  type="file"
-                  accept=".pdf,.png,.jpg"
-                  style={{ display: 'none' }}
-                />
-                <span style={{ color: '#999', fontSize: '12px' }}>
-                  Maximum File Size: 5mb
-                  <br />
-                  Supported Formats: Pdf, Png, Jpg
-                </span>
-              </div>
-              <br />
-            </div>
-            <br />
-            <div className="fssai-section">
-              <input
-                type="text"
-                className="textarea"
-                placeholder="Enter FSSAI (optional)"
-              />
-              <button className="verify-btn">Verify FSSAI</button>
-            </div>
-            <br />
-            <br />
-
-            <div className="uploadimagecontainer">
-              <label htmlFor="file-upload" className="uploadimage">
-                <span role="img" aria-label="upload">
-                  <img src={uploadimg} alt="" />
-                </span>
-                &nbsp; Upload the file
-              </label>
-              <input
-                id="file-upload"
-                type="file"
-                accept=".pdf,.png,.jpg"
-                style={{ display: 'none' }}
-              />
-              <span style={{ color: '#999', fontSize: '12px' }}>
-                Maximum File Size: 5mb
-                <br />
-                Supported Formats: Pdf, Png, Jpg
-              </span>
-            </div>
-            <div className="button-group">
-              <button className="back-button">BACK</button>
-              <button className="save-button">Save & Continue</button>
-            </div>
-          </form>
-        </div>
-      )} */}
-
       {pageflag === 'ShippingLocation' && (
         <div className="container mx-auto p-10">
-          <h1 className="text-5xl font-bold mb-2">Shipping Locations</h1>
+          <h1 className="text-5xl font-bold mb-2 mt-10 text-left">
+            Shipping Locations
+          </h1>
           <hr className="border-t border-gray-300 mb-5" />
           <form
             className="form-group space-y-6"
             onSubmit={handleShippingLocations}
           >
-            <div className="location-selector flex gap-2 mb-5 w-[625px]">
-              <select className="textarea w-full p-3 border rounded-lg bg-white text-sm text-gray-700 border-gray-300">
+            <div className="location-selector flex gap-2 mb-10 w-full mt-8">
+              <select className="textarea w-1/3 p-3 border rounded-lg bg-white text-sm text-gray-700 border-gray-300">
                 <option>CCGYT76456678FGTVV</option>
               </select>
               <input
                 type="text"
                 placeholder="Hyderabad"
-                className="textarea w-full p-3 border rounded-lg bg-white text-sm text-gray-700 border-gray-300"
+                className="textarea w-1/3 p-3 border rounded-lg bg-white text-sm text-gray-700 border-gray-300"
               />
             </div>
-            <div className="gst-details p-4 border border-black rounded-lg w-[625px] space-y-3 mb-5">
-              <p className="gst-label font-bold text-gray-900">GST number</p>
-              <p className="gst-value text-gray-700">CCGYT76456678FGTVV</p>
+
+            <div className="p-4 border border-black rounded-lg w-2/3 h-[30vh] space-y-3 mb-8 flex flex-col">
+              <p className="gst-label font-bold text-gray-900 text-left">
+                GST number
+              </p>
+              <p className="gst-value text-gray-700 text-left">
+                CCGYT76456678FGTVV
+              </p>
+              <br />
               <select className="textarea w-full p-3 border rounded-lg bg-white text-sm text-gray-700 border-gray-300">
                 <option>Select Address</option>
               </select>
-              <p className="info-text text-xs text-purple-400 mt-3">
+              <p className="info-text text-xs text-purple-400 mt-3 text-left flex-1">
                 These Addresses Are Fetched From Your GST Information
               </p>
-              <div className="uploadimagecontainer flex items-center gap-4 mt-4">
+              <div className="flex items-center gap-4 flex-1">
                 <label
                   htmlFor="file-upload"
                   className="uploadimage inline-flex items-center justify-center p-3 border rounded-lg cursor-pointer text-blue-600 border-blue-600 text-sm font-medium"
@@ -1085,16 +790,18 @@ const SellerDetails = () => {
                 </span>
               </div>
             </div>
-            <div className="fssai-section flex gap-2 mb-5 w-[625px]">
+
+            <div className="flex gap-2 w-2/3">
               <input
                 type="text"
                 className="textarea w-full p-3 border rounded-lg bg-white text-sm text-gray-700 border-gray-300"
                 placeholder="Enter FSSAI (optional)"
               />
-              <button className="verify-btn bg-blue-600 text-white rounded-lg px-5 py-2 text-sm">
+              <button className="bg-[#6666FF] text-white rounded-lg text-sm">
                 Verify FSSAI
               </button>
             </div>
+
             <div className="uploadimagecontainer flex items-center gap-4 mb-5">
               <label
                 htmlFor="file-upload"
@@ -1128,59 +835,17 @@ const SellerDetails = () => {
         </div>
       )}
 
-      {/* {pageflag === 'DigitalSignature' && (
-        <div className="container">
-          <h1 className="title">Digital Signature</h1>
-          <hr className="divider" />
-          <div className="main-content">
-            <div
-              className="upload-section"
-              onDragOver={handleDragOver}
-              onDrop={handleDrop}
-            >
-              <div className="upload-box">
-                <img
-                  src={uploadIcon}
-                  alt="Upload Icon"
-                  className="upload-icon"
-                />
-                <p>Drag & Drop File Or Browse</p>
-                <input
-                  type="file"
-                  accept=".jpg,.png"
-                  onChange={handleFileChange}
-                  className="file-input"
-                />
-                {selectedFile && (
-                  <p className="file-name">
-                    Selected File: {selectedFile.name}
-                  </p>
-                )}
-                <p className="upload-info">
-                  Supported Formats: Jpg, Png <br /> Maximum File Size: 2 MB
-                </p>
-                <p className="upload-info"></p>
-              </div>
-            </div>
-          </div>
-
-          <div className="button-group">
-            <button className="back-button">BACK</button>
-            <button className="save-button">Save & Continue</button>
-          </div>
-        </div>
-      )} */}
       {pageflag === 'DigitalSignature' && (
-        <div className="mx-auto p-10">
-          <h1 className="text-5xl font-bold mb-2">Digital Signature</h1>
+        <div className="p-10">
+          <h1 className="text-5xl font-bold mb-2 text-left mt-10">Digital Signature</h1>
           <hr className="border-t border-gray-300 mb-5" />
-          <div className="bg-white">
+          <div className="bg-white mt-10">
             <div
               className="flex justify-center items-center flex-col"
               onDragOver={handleDragOver}
               onDrop={handleDrop}
             >
-              <div className="w-[43vw] h-[35vh] border-2 border-black rounded-lg flex flex-col justify-center items-center text-center relative">
+              <div className="w-[30vw] h-[35vh] border-2 border-black rounded-3xl flex flex-col justify-center items-center text-center relative">
                 <img
                   src={uploadIcon}
                   alt="Upload Icon"
