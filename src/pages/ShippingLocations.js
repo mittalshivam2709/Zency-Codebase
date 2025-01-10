@@ -122,6 +122,37 @@ const SellerDetails = () => {
           <button className="save-button">Save & Continue</button>
         </div>
       </div>
+
+      <label htmlFor="gstDetails" className="block text-2xl mb-2 text-black">
+        GST Details
+      </label>
+      <input
+        type="text"
+        name="gstNumber"
+        className="rounded-lg border border-gray-300 p-2 text-base w-full bg-white"
+        placeholder="Enter GST Details*"
+        value={formData.gstNumber} // Bind value to formData
+      />
+
+      <label className="text-lg font-semibold">Contact Details</label>
+      <input
+        name="contactname"
+        type="text"
+        className="w-full p-3 border border-gray-300 rounded-md text-base"
+        placeholder="Contact Name"
+        value={formData.contactname}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="mobilenumber"
+        type="text"
+        className="w-full p-3 border border-gray-300 rounded-md text-base"
+        placeholder="Mobile Number"
+        value={formData.mobilenumber}
+        onChange={handleChange}
+        required
+      />
     </div>
   )
 }
